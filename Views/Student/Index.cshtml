@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ViewModelTableFormation.Models.Student>
+
+<a asp-controller="Student" asp-action="Create" class="btn btn-primary">Add Student</a>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">SN</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Gmail</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Course</th>
+                <th scope="col">Actions</th> <!-- Added 'Actions' header for clarity -->
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var student in Model)
+                {
+                    <tr data-url="@Url.Action("Details", new { id = student.Id })" onclick="window.location=this.dataset.url">
+                        <th scope="row">@(i++)</th>
+                        <td>@student.Name</td>
+                        <td>@student.Address</td>
+                        <td>@student.Gmail</td>
+                        <td>@student.DateofBirth.ToString("yyyy-MM-dd")</td> <!-- Format DateTime for readability -->
+                        <td>@student.Course.CourseName</td> <!-- Handle possible null reference for Course -->
+                        <td>
+                            <a asp-controller="Student" asp-action="Edit" asp-route-id="@student.Id" class="btn btn-warning">Edit</a>
+                            <a asp-controller="Student" asp-action="Delete" asp-route-id="@student.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7">No students available.</td> <!-- Handle the case where Model is null or empty -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ViewModelTableFormation.Models.Course>
+
+<a asp-controller="Course" asp-action="Create" class="btn btn-primary">Add Course</a>
+
+<div class="text-center">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">SN</th>
+				<th scope="col">CourseName</th>
+				<th scope="col">CourseCode</th>
+				<th scope="col">Credits</th>
+				<th scope="col">Description</th>
+				<th scope="col">TuitionFee</th>
+				<th scope="col">StartDate</th>
+				<th scope="col">EndDate</th>
+				<th scope="col">Faculty</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				int i = 1;
+			}
+
+			@foreach (var course in Model)
+			{
+				<tr>
+					<th scope="row">@(i++)</th>
+					<td>@course.CourseName</td>
+					<td>@course.CourseCode</td>
+					<td>@course.Credits</td>
+					<td>@course.Description</td>
+					<td>@course.TuitionFee</td>
+					<td>@course.StartDate.ToString("yyyy-MM-dd")</td>
+					<td>@course.EndDate.ToString("yyyy-MM-dd")</td>
+					@*----Faculty name is added in Course table----*@
+					<td>@course.Faculty.Name</td>
+					<td>
+						<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
+						<a asp-controller="Course" asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+
+
+
+		</tbody>
+	</table>
+</div>

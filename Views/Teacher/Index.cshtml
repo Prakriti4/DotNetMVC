@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ViewModelTableFormation.Models.Teacher>
+
+<a asp-controller="Teacher" asp-action="Create" class="btn btn-primary">Add Teacher</a>
+
+<div class="text-center">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">SN</th>
+				<th scope="col">Name</th>
+				<th scope="col">Gmail</th>
+				<th scope="col">Address</th>
+				<th scope="col">PhoneNumber</th>
+				<th scope="col">Course</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				int i = 1;
+			}
+			@if (Model is not null)
+			{
+				@foreach (var teacher in Model)
+				{
+					<tr data-url="@Url.Action("Details", new { id = teacher.Id })" onclick="window.location=this.dataset.url">
+						<th scope="row">@(i++)</th>
+						<td>@teacher.Name</td>
+						<td>@teacher.Gmail</td>
+						<td>@teacher.Address</td>
+						<td>@teacher.PhoneNumber</td>
+						<td>@teacher.Course.CourseName</td>
+						<td>
+							<a asp-controller="Teacher" asp-action="Edit" asp-route-id="@teacher.Id" class="btn btn-warning">Edit</a>
+						@* 	<a asp-controller="Teacher" asp-action="Details" asp-route-id="@teacher.Id" class="btn btn-warning">Details</a> *@
+							<a asp-controller="Teacher" asp-action="Delete" asp-route-id="@teacher.Id" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+
+			}
+
+		</tbody>
+	</table>
+</div>

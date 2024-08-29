@@ -1,0 +1,63 @@
+﻿@model ViewModelTableFormation.Models.Student
+
+@{
+    ViewData["Title"] = "Edit Student Entry";
+}
+
+<h2>Edit Student Entry</h2>
+
+<form asp-controller="Student" asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(m => m.Id) <!-- Hidden field to keep track of the student's ID -->
+    <!-- Student Name -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter Student Name" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = "Enter Home Address" })
+        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Email Address -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gmail)
+        @Html.TextBoxFor(m => m.Gmail, new { @class = "form-control", placeholder = "Enter Email Address" })
+        @Html.ValidationMessageFor(m => m.Gmail, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.DateofBirth)
+        @Html.TextBoxFor(m => m.DateofBirth, new { @class = "form-control", placeholder = "Enter Date of Birth", type = "date" })
+        @Html.ValidationMessageFor(m => m.DateofBirth, "", new { @class = "text-danger" })
+    </div>
+
+    <!-- Course Dropdown -->
+    <div class="form-group">
+        @Html.LabelFor(m => m.CourseId)
+        @Html.DropDownListFor(m => m.CourseId, (IEnumerable<SelectListItem>)ViewBag.Courses, "Select a Course", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CourseId, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label asp-for="Image" class="control-label"></label>
+        <div class="custom-file form-control">
+            <input asp-for="Image" class="custom-file-input" id="customFile">
+        </div>
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Update</button>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Back to List</a>
+</div>
+
+@section Scripts {
+    @* Include jQuery Validation scripts for client-side validation *@
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
