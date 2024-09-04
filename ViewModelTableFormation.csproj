@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>7c9c411d-67dd-4f96-834f-9cfb3869b7d1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,14 +12,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.33" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.33" />
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.33" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.33">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.33" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.33" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.33">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

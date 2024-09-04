@@ -2,14 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using ViewModelTableFormation.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using ViewModelTableFormation.Data;
 
 namespace ViewModelTableFormation.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FacultyController : Controller
     {
-        private readonly SchoolDbContext _context;
+        private readonly SchoolIdentityDbContext _context;
 
-        public FacultyController(SchoolDbContext context)
+        public FacultyController(SchoolIdentityDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
@@ -19,7 +22,7 @@ namespace ViewModelTableFormation.Controllers
             var detail = _context.Faculties.ToList();
             return View(detail);
         }
-
+        [Authorize(Roles ="Admin")]
         public IActionResult Create()
         {
             //// Load available courses for selection in the form

@@ -11,10 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("7c9c411d-67dd-4f96-834f-9cfb3869b7d1")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ViewModelTableFormation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f28f550b0364bb1aed66311e6db017d8b16652b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ViewModelTableFormation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ViewModelTableFormation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

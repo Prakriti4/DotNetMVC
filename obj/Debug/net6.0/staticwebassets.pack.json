@@ -21,6 +21,18 @@
       "PackagePath": "staticwebassets\\images\\001099a6-32b2-456a-999a-d673424439cf_heart.png"
     },
     {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\0896a4ce-72d3-431a-90d6-0bb45d623fa3_heart.png",
+      "PackagePath": "staticwebassets\\images\\0896a4ce-72d3-431a-90d6-0bb45d623fa3_heart.png"
+    },
+    {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\2b45b967-df45-4ecc-a648-98d7e8f319fb_ds image.jpg",
+      "PackagePath": "staticwebassets\\images\\2b45b967-df45-4ecc-a648-98d7e8f319fb_ds image.jpg"
+    },
+    {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\3614ce03-6e73-42a9-9368-df340d8fbece_heart.png",
+      "PackagePath": "staticwebassets\\images\\3614ce03-6e73-42a9-9368-df340d8fbece_heart.png"
+    },
+    {
       "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\79656931-6b09-4c3f-ad2a-451ddb8ddfb7_heart.png",
       "PackagePath": "staticwebassets\\images\\79656931-6b09-4c3f-ad2a-451ddb8ddfb7_heart.png"
     },
@@ -29,8 +41,24 @@
       "PackagePath": "staticwebassets\\images\\eb8ca9e6-7b2e-4900-b441-45d71324b462_ds image.jpg"
     },
     {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\fa63206f-d16f-4a53-aa61-d0cf8d23fbfe_heart.png",
+      "PackagePath": "staticwebassets\\images\\fa63206f-d16f-4a53-aa61-d0cf8d23fbfe_heart.png"
+    },
+    {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\home.jpg",
+      "PackagePath": "staticwebassets\\images\\home.jpg"
+    },
+    {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\joyful-school-dismissal-stockcake.jpg",
+      "PackagePath": "staticwebassets\\images\\joyful-school-dismissal-stockcake.jpg"
+    },
+    {
       "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\images\\online.jpg",
+      "PackagePath": "staticwebassets\\images\\online.jpg"
     },
     {
       "Id": "D:\\DotNetInternProject\\ViewModelTableFormation\\wwwroot\\js\\site.js",

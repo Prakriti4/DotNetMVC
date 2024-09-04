@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ViewModelTableFormation.Data;
 using ViewModelTableFormation.Models;
 
 namespace ViewModelTableFormation.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TeacherController : Controller
     {
-        private readonly SchoolDbContext _context;
+        private readonly SchoolIdentityDbContext _context;
 
-        public TeacherController(SchoolDbContext context)
+        public TeacherController(SchoolIdentityDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
@@ -79,6 +82,7 @@ namespace ViewModelTableFormation.Controllers
         {
             ViewBag.Courses = new SelectList(_context.Courses.ToList(), "Id", "CourseName");
             var model = _context.Teachers.Find(id);
+
             if (model == null)
             {
                 return NotFound();
@@ -92,8 +96,11 @@ namespace ViewModelTableFormation.Controllers
         public IActionResult Edit(Teacher teacher)
         {
             ViewBag.Courses = new SelectList(_context.Courses.ToList(), "Id", "CourseName");
+          
             if (ModelState.IsValid)
             {
+                string uniqueFile = UploadedFile(teacher);
+                teacher.ImageUrl = uniqueFile;
                 _context.Teachers.Update(teacher);
                 _context.SaveChanges();
                 TempData["SuccessMessage"] = "Teacher record updated successfully";

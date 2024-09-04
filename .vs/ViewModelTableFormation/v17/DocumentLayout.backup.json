@@ -3,8 +3,56 @@
   "WorkspaceRootPath": "D:\\DotNetInternProject\\ViewModelTableFormation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\viewmodel\\studentdetailsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:viewmodel\\studentdetailsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\viewmodel\\editstudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:viewmodel\\editstudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\viewmodel\\deletestudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:viewmodel\\deletestudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\viewmodel\\createstudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:viewmodel\\createstudentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\student\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|d:\\dotnetinternproject\\viewmodeltableformation\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD8E8ED5-31D8-40B0-9DB6-5C02ECAD7204}|ViewModelTableFormation.csproj|solutionrelative:controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +67,170 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAANAAAAAAAAAA==",
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Controllers\\CourseController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T08:08:47.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditStudentModel.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\EditStudentModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\EditStudentModel.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\EditStudentModel.cs",
+              "RelativeToolTip": "ViewModel\\EditStudentModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T07:49:27.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateStudentModel.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\CreateStudentModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\CreateStudentModel.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\CreateStudentModel.cs",
+              "RelativeToolTip": "ViewModel\\CreateStudentModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T07:34:12.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T07:30:58.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Index.cshtml",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-29T09:44:12.652Z",
+              "WhenOpened": "2024-09-04T07:28:52.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Details.cshtml",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Details.cshtml",
+              "RelativeToolTip": "Views\\Student\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T07:28:36.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Edit.cshtml",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Student\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T07:28:11.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Delete.cshtml",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Student\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T07:28:06.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Create.cshtml",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Views\\Student\\Create.cshtml",
+              "RelativeToolTip": "Views\\Student\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-04T07:27:51.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TeacherController.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "Controllers\\TeacherController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T06:13:36.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwDgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T05:53:08.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentDetailsModel.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\StudentDetailsModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\StudentDetailsModel.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\StudentDetailsModel.cs",
+              "RelativeToolTip": "ViewModel\\StudentDetailsModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T05:47:19.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeleteStudentModel.cs",
+              "DocumentMoniker": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\DeleteStudentModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\DeleteStudentModel.cs",
+              "ToolTip": "D:\\DotNetInternProject\\ViewModelTableFormation\\ViewModel\\DeleteStudentModel.cs",
+              "RelativeToolTip": "ViewModel\\DeleteStudentModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T05:47:01.169Z",
               "EditorCaption": ""
             }
           ]

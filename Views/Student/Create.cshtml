@@ -1,11 +1,11 @@
-﻿@model ViewModelTableFormation.Models.Student
+﻿@model ViewModelTableFormation.ViewModel.CreateStudentModel
 
 @{
     ViewData["Title"] = "Create Student";
 }
 
 <h2>Create Student</h2>
-
+<div class="container">
 <form asp-action="Create" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
 
@@ -61,3 +61,4 @@
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </div>
 </form>
+</div>

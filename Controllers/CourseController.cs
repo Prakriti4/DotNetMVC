@@ -1,18 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ViewModelTableFormation.Data;
 using ViewModelTableFormation.Models;
 
 namespace ViewModelTableFormation.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CourseController : Controller
     {
-        private readonly SchoolDbContext _context;
+        private readonly SchoolIdentityDbContext _context;
 
-        public CourseController(SchoolDbContext context)
+        public CourseController(SchoolIdentityDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
+
 
         public async Task<IActionResult> Index()
         {
