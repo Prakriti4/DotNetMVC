@@ -2,10 +2,9 @@
 
 namespace ViewModelTableFormation.Models
 {
-    public class Course
+    public class Course : BaseEntity //baseentity is a parent class
     {
-        [Key]
-        public int Id { get; set; }
+        
         [Required]
         public string CourseName { get; set; }     // Name of the course
         public string CourseCode { get; set; }     // Unique code for the course

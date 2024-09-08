@@ -2,7 +2,7 @@
 
 namespace ViewModelTableFormation.Models
 {
-    public class User:IdentityUser
+    public class User
     {
         public string? FirstName { get; set; }
 
