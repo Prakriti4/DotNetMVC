@@ -7,7 +7,6 @@ using ViewModelTableFormation.Models;
 
 namespace ViewModelTableFormation.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class CourseController : Controller
     {
         private readonly SchoolIdentityDbContext _context;
@@ -47,7 +46,7 @@ namespace ViewModelTableFormation.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Courses.Add(course);
+                _context.Courses.Add(course);  //why this when repo pattern is used call garana 
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
