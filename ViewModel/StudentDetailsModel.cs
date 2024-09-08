@@ -6,6 +6,8 @@ namespace ViewModelTableFormation.ViewModel
 {
 	public class StudentDetailsModel
 	{
+
+		//public IEnumerable<Student> Students { get; set; }
 		[Key]
 		public int Id { get; set; }
 
