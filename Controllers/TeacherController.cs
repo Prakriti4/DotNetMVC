@@ -7,7 +7,7 @@ using ViewModelTableFormation.Models;
 
 namespace ViewModelTableFormation.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
     public class TeacherController : Controller
     {
         private readonly SchoolIdentityDbContext _context;

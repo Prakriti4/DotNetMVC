@@ -1,211 +1,172 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using ViewModelTableFormation.Data;
+using Microsoft.AspNetCore.Hosting;
 using ViewModelTableFormation.Models;
+using ViewModelTableFormation.Repository;
 using ViewModelTableFormation.ViewModel;
+using ViewModelTableFormation.UnitOfWork;
+using System.IO;
+using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
-namespace ViewModelTableFormation.Controllers
+public class StudentController : Controller
 {
-    [Authorize(Roles = "Admin")]
-    public class StudentController : Controller
+    private readonly IStudentRepository _studentRepository;
+    private readonly IMapper _mapper;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IWebHostEnvironment _webHostEnvironment; // Use IWebHostEnvironment for path handling
+
+    public StudentController(IStudentRepository studentRepository, IMapper mapper, IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
     {
-        private readonly SchoolIdentityDbContext _context;
+        _studentRepository = studentRepository;
+        _mapper = mapper;
+        _unitOfWork = unitOfWork;
+        _webHostEnvironment = webHostEnvironment;
+    }
 
-    
-
-        public StudentController(SchoolIdentityDbContext context)
+    public async Task<IActionResult> Index()
+    {
+        var courses= await _unitOfWork.Courses.GetAllAsync();
+        var students = await _studentRepository.GetAllAsync();
+        var studentDetailsModels = _mapper.Map<IEnumerable<StudentDetailsModel>>(students);
+        var courseViewModels = _mapper.Map<IEnumerable<CourseModel>>(courses);
+        if (students == null)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            return View("Error");
         }
+        return View(studentDetailsModels);
+    }
 
-        public async Task<IActionResult> Index()
+    public async Task<IActionResult> Create()
+    {
+        var courses = await _studentRepository.GetAllCoursesAsync();
+        ViewBag.Course = new SelectList(courses, "Id", "CourseName");
+        return View(new CreateStudentModel());
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateStudentModel model)
+    {
+        if (ModelState.IsValid)
         {
+            var student = _mapper.Map<Student>(model);
 
-            ViewBag.Coursess = _context.Courses.ToList();
-            var models = await _context.Students.ToListAsync();
-            if (models == null)
+            if (model.Image != null)
             {
-                return View("Error");
+                student.ImageUrl = UploadedFile(model.Image);
             }
-            return View(models);
+
+            await _studentRepository.AddAsync(student);
+            await _unitOfWork.CompleteAsync();
+
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Create()
+        var courses = await _studentRepository.GetAllCoursesAsync();
+        ViewBag.Course = new SelectList(courses, "Id", "CourseName");
+        return View(model);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Details(int id)
+    {
+        var student = await _studentRepository.GetByIdAsync(id);
+        if (student == null)
         {
-     
-            ViewBag.Course = new SelectList(_context.Courses, "Id", "CourseName");
-            return View(new CreateStudentModel());
+            return NotFound();
         }
 
-        [HttpPost]
-        public IActionResult Create(CreateStudentModel model)
+        var studentViewModel = _mapper.Map<StudentDetailsModel>(student);
+        return View(studentViewModel);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var student = await _studentRepository.GetByIdAsync(id);
+        if (student == null)
         {
-            ViewBag.Course = new SelectList(_context.Courses, "Id", "CourseName");
-            if (ModelState.IsValid)
-            {
-                var student = new Student
-                {
-                    Name = model.Name,
-                    Address = model.Address,
-                    Gmail = model.Gmail,
-                    DateofBirth = model.DateofBirth,
-                    Image = model.Image,
-                    ImageUrl = model.ImageUrl,
-                    CourseId = model.CourseId,
-                };
-                string uniqueFile = UploadedFile(student);
-                student.ImageUrl=uniqueFile;
-                _context.Add(student);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(model);
+            return NotFound();
         }
 
+        var model = _mapper.Map<EditStudentModel>(student);
+        var courses = await _studentRepository.GetAllCoursesAsync();
+        ViewBag.Courses = new SelectList(courses, "Id", "CourseName");
+        return View(model);
+    }
 
-		[HttpGet]
-		public IActionResult Details(int id)
-		{
-			var student = _context.Students
-				.Include(s => s.Course)
-				.FirstOrDefault(s => s.Id == id);
-
-			if (student == null)
-			{
-				return NotFound();
-			}
-
-			var model = new StudentDetailsModel
-			{
-				Id = student.Id,
-				Name = student.Name,
-				Address = student.Address,
-				Gmail = student.Gmail,
-				DateofBirth = student.DateofBirth,
-				ImageUrl = student.ImageUrl,
-                CourseName= student.Course.CourseName,
-		
-			};
-
-			return View(model);
-		}
-
-		public string UploadedFile(Student model)
+    [HttpPost]
+    public async Task<IActionResult> Edit(EditStudentModel model)
+    {
+        if (ModelState.IsValid)
         {
-            string uniqueFileName = null;
-            if(model.Image!=null)
-            {
-                string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
-                uniqueFileName=Guid.NewGuid().ToString()+"_"+model.Image.FileName;
-                string filePath=Path.Combine(uploadsFolder, uniqueFileName);
-                using (var fileStream=new FileStream(filePath,FileMode.Create))
-                {
-                    model.Image.CopyTo(fileStream);
-                }
-                
-            }
-            return uniqueFileName;
-        }
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            ViewBag.Courses = new SelectList(_context.Courses.ToList(), "Id", "CourseName");
-            var model = _context.Students.Find(id);
-            if (model == null)
+            var student = await _studentRepository.GetByIdAsync(model.Id);
+            if (student == null)
             {
                 return NotFound();
             }
-            var model_1 = new EditStudentModel
+
+            _mapper.Map(model, student);
+
+            if (model.Image != null)
             {
-                Id = model.Id,
-                Name = model.Name,
-                Address = model.Address,
-                Gmail = model.Gmail,
-                DateofBirth = model.DateofBirth,
-                ImageUrl = model.ImageUrl,
-                CourseId = model.CourseId,
-            };
-            return View(model_1);
+                student.ImageUrl = UploadedFile(model.Image);
+            }
+
+            await _studentRepository.UpdateAsync(student);
+            await _unitOfWork.CompleteAsync();
+
+            return RedirectToAction("Index");
         }
-        
 
-        [HttpPost]
+        var courses = await _studentRepository.GetAllCoursesAsync();
+        ViewBag.Courses = new SelectList(courses, "Id", "CourseName");
+        return View(model);
+    }
 
-        public IActionResult Edit(EditStudentModel model)
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var student = await _studentRepository.GetByIdAsync(id);
+        if (student == null)
         {
-            ViewBag.Courses = new SelectList(_context.Courses.ToList(), "Id", "CourseName");
-			if (ModelState.IsValid)
-			{
-				var student = _context.Students.Find(model.Id);
-				if (student == null)
-				{
-					return NotFound();
-				}
+            return NotFound();
+        }
 
-				student.Name = model.Name;
-				student.Address = model.Address;
-				student.Gmail = model.Gmail;
-				student.DateofBirth = model.DateofBirth;
-				student.CourseId = model.CourseId;
+        var deleteStudentModel = _mapper.Map<DeleteStudentModel>(student);
+        return View(deleteStudentModel);
+    }
 
-				// Handle image upload if a new image is provided
-				if (model.Image != null)
-				{
-					var fileName = Path.GetFileName(model.Image.FileName);
-					var filePath = Path.Combine("wwwroot/images", fileName);
-					using (var stream = new FileStream(filePath, FileMode.Create))
-					{
-						model.Image.CopyTo(stream);
-					}
-					student.ImageUrl = "/images/" + fileName;
-				}
+    [HttpPost]
+    public async Task<IActionResult> Delete(DeleteStudentModel model)
+    {
+        var student = await _studentRepository.GetByIdAsync(model.Id);
+        if (student == null)
+        {
+            return NotFound();
+        }
 
-				_context.SaveChanges();
+        await _studentRepository.DeleteAsync(model.Id);
+        await _unitOfWork.CompleteAsync();
 
-				return RedirectToAction("Index");
-			}
-			return View(model);
-		}
+        return RedirectToAction("Index");
+    }
 
-		[HttpGet]
-		public IActionResult Delete(int id)
-		{
-			var student = _context.Students.Find(id);
-			if (student == null)
-			{
-				return NotFound();
-			}
-
-			var model = new DeleteStudentModel
-			{
-				Id = student.Id,
-				Name = student.Name,
-				ImageUrl = student.ImageUrl
-			};
-
-			return View(model);
-		}
-
-		[HttpPost]
-		public IActionResult Delete(DeleteStudentModel model)
-		{
-			var student = _context.Students.Find(model.Id);
-			if (student == null)
-			{
-				return NotFound();
-			}
-
-			_context.Students.Remove(student);
-			_context.SaveChanges();
-
-			return RedirectToAction("Index");
-		}
-
-
-	}
-
+    private string UploadedFile(IFormFile image)
+    {
+        if (image != null)
+        {
+            string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(image.FileName);
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                image.CopyTo(fileStream);
+            }
+            return "/images/" + uniqueFileName;
+        }
+        return null;
+    }
 }

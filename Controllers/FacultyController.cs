@@ -7,7 +7,6 @@ using ViewModelTableFormation.Data;
 
 namespace ViewModelTableFormation.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class FacultyController : Controller
     {
         private readonly SchoolIdentityDbContext _context;
@@ -22,7 +21,7 @@ namespace ViewModelTableFormation.Controllers
             var detail = _context.Faculties.ToList();
             return View(detail);
         }
-        [Authorize(Roles ="Admin")]
+       
         public IActionResult Create()
         {
             //// Load available courses for selection in the form
